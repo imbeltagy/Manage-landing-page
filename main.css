@@ -1,3 +1,12 @@
+/*  Navigator:-
+    ===========
+    - Global Rules
+    - Normalize
+    - Header
+*/
+/* Break Point: 50rem */
+
+/* - Normalize */
 *,
 *::before,
 *::after {
@@ -9,6 +18,123 @@ html,
 body {
   height: 100%;
 }
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+/* - Global Rules */
 body {
   font-family: "Be Vietnam Pro", sans-serif;
+}
+.container {
+  width: min(75rem, 100vw);
+  padding-inline: 1.5rem;
+  margin: 0 auto;
+}
+.get-started {
+  font-size: 0.8rem;
+  color: #fff;
+  font-weight: 700;
+  padding: 1em 2.5em;
+  border-radius: 5em;
+  background-color: hsl(12, 88%, 59%);
+  box-shadow: 0 1.2em 0.6em -0.8em hsl(12, 93%, 89%);
+  transition: background-color 0.3s;
+}
+.get-started:hover {
+  background-color: hsl(12, 96%, 82%);
+}
+
+/* - Header */
+header {
+  padding: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 50rem) {
+  header {
+    padding: 4rem 0;
+  }
+}
+header .get-started {
+  display: none;
+}
+@media (min-width: 50rem) {
+  header .get-started {
+    display: block;
+  }
+}
+nav img {
+  cursor: pointer;
+}
+@media (min-width: 50rem) {
+  nav img {
+    display: none;
+  }
+}
+nav ul {
+  /* Position */
+  position: absolute;
+  top: 7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Self Style */
+  width: 90vw;
+  background-color: #fff;
+  border-radius: 0.3rem;
+  display: none;
+  /* Children Position */
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8em;
+  padding: 3rem 1rem;
+  /* Children Style */
+  font-weight: 700;
+}
+nav.opened ul {
+  display: flex !important;
+}
+@media (min-width: 50rem) {
+  nav ul {
+    /* Position */
+    position: static;
+    transform: unset;
+    /* Self Style */
+    width: auto;
+    background-color: transparent;
+    border-radius: 0;
+    /* Children Position */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    /* Children Style */
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+}
+/* Mobile Navigation shadow */
+nav::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0;
+  background-image: linear-gradient(#0000, #0005);
+  z-index: -1;
+}
+nav.opened::before {
+  height: 100%;
+}
+nav li a {
+  color: hsl(228, 39%, 23%);
+}
+nav li:hover a {
+  color: hsl(227, 12%, 61%);
 }

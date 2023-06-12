@@ -30,14 +30,32 @@
     </style>
   </head>
   <body>
-    hello
-    <pre>
-      Pricing
-      Product
-      About Us
-      Careers
-      Community
-    
+    <section class="hero">
+      <div class="container">
+        <header>
+          <img src="assets/images/logo.svg" alt="Manage Logo" class="logo" />
+          <nav>
+            <img
+              src="assets/images/icons/icon-hamburger.svg"
+              alt="Open Navigation"
+              id="open-nav"
+              data-alt-src="assets/images/icons/icon-close.svg"
+            />
+            <ul>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Product</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Community</a></li>
+            </ul>
+          </nav>
+          <a href="#" class="get-started">Get Started</a>
+        </header>
+      </div>
+    </section>
+
+    <!-- Temporary Element -->
+    <pre>    
       Get Started
     
       Bring everyone together to build better products.
@@ -116,5 +134,15 @@
         .
       </div>
   </pre>
+
+    <!-- Open Mobile Navigation -->
+    <script>
+      document.getElementById("open-nav").onclick = function () {
+        this.parentElement.classList.toggle("opened");
+        const currentSrc = this.getAttribute("src");
+        this.setAttribute("src", this.dataset.altSrc);
+        this.dataset.altSrc = currentSrc;
+      };
+    </script>
   </body>
 </html>
