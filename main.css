@@ -5,7 +5,7 @@
     - Header
     - Main
 */
-/* Break Point: 50rem */
+/* Break Point: 50rem, 60rem */
 
 /* - Normalize */
 *,
@@ -33,9 +33,21 @@ ul {
 body {
   font-family: "Be Vietnam Pro", sans-serif;
   line-height: 1.6;
+  background-image: url("assets/images/background/bg-tablet-pattern.svg"),
+    url("assets/images/background/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-size: min(100%, 40rem) auto, min(80%, 20rem) auto;
+  background-position: calc(100% + 6rem) -6%, calc(100% + 10rem) 100vmin;
+  min-height: 200vh;
+}
+@media (min-width: 50rem) {
+  body {
+    background-size: clamp(50rem, 60vw, 60rem) auto;
+    background-position: max(50vw, 110%) -10vw, -45vh 100vh;
+  }
 }
 .container {
-  width: min(75rem, 100vw);
+  width: min(75rem, 95vw);
   padding-inline: 1.5rem;
   margin: 0 auto;
 }
@@ -53,7 +65,9 @@ body {
   background-color: hsl(12, 96%, 82%);
 }
 
-/* - Header */
+/*  ========
+    - Header
+    ========  */
 header {
   padding: 3rem 0;
   display: flex;
@@ -143,11 +157,13 @@ nav li:hover a {
   color: hsl(227, 12%, 61%);
 }
 
-/* - Main */
+/*  ======
+    - Main
+    ======  */
 main {
   text-align: center;
 }
-@media (min-width: 50rem) {
+@media (min-width: 60rem) {
   main {
     padding-top: 3rem;
     display: flex;
@@ -158,13 +174,15 @@ main {
 }
 main img {
   max-width: 100%;
+  flex-grow: 0;
 }
 h1 {
   line-height: 1.2;
   font-size: 2.2rem;
   color: hsl(228, 39%, 23%);
+  white-space: balance;
 }
-@media (min-width: 50rem) {
+@media (min-width: 60rem) {
   h1 {
     font-size: 3.2rem;
     padding-top: 3rem;
@@ -173,8 +191,9 @@ h1 {
 main p {
   color: hsl(227, 12%, 61%);
   margin-top: 1rem;
+  white-space: balance;
 }
-@media (min-width: 50rem) {
+@media (min-width: 60rem) {
   main p {
     max-width: 22rem;
   }
@@ -182,7 +201,7 @@ main p {
 main .get-started {
   margin: 2rem auto 0;
 }
-@media (min-width: 50rem) {
+@media (min-width: 60rem) {
   main .get-started {
     margin-left: 0;
   }
