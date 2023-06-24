@@ -100,28 +100,54 @@
       </ul>
     </section>
 
+    <!-- Testmonials -->
+    <section class="testmonials">
+      <h2>What they’ve said</h2>
+      <div id="testmonials-slider">
+        <div class="card">
+          <img src="assets/images/avatars/avatar-anisha.png" alt="Anisha Li Picture" />
+          <h3>Anisha Li</h3>
+          <p>
+            “Manage has supercharged our team’s workflow. The ability to maintain visibility on larger milestones at all
+            times keeps everyone motivated.”
+          </p>
+        </div>
+        <div class="card">
+          <img src="assets/images/avatars/avatar-ali.png" alt="Ali Bravo Picture" />
+          <h3>Ali Bravo</h3>
+          <p>
+            “We have been able to cancel so many other subscriptions since using Manage. There is no more cross-channel
+            confusion and everyone is much more focused.”
+          </p>
+        </div>
+        <div class="card">
+          <img src="assets/images/avatars/avatar-richard.png" alt="Richard Watts Picture" />
+          <h3>Richard Watts</h3>
+          <p>
+            “Manage allows us to provide structure and process. It keeps us organized and focused. I can’t stop
+            recommending them to everyone I talk to!”
+          </p>
+        </div>
+        <div class="card">
+          <img src="assets/images/avatars/avatar-shanai.png" alt="Shanai Gough Picture" />
+          <h3>Shanai Gough</h3>
+          <p>
+            “Their software allows us to track, manage and collaborate on our projects from anywhere. It keeps the whole
+            team in-sync without being intrusive.”
+          </p>
+        </div>
+      </div>
+      <ul id="slider-nav">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <a href="#" class="get-started">Get Started</a>
+    </section>
+
     <!-- Temporary Element -->
     <pre>      
-    
-      What they’ve said
-    
-      Anisha Li
-      “Manage has supercharged our team’s workflow. The ability to maintain 
-      visibility on larger milestones at all times keeps everyone motivated.”
-    
-      Ali Bravo
-      “We have been able to cancel so many other subscriptions since using 
-      Manage. There is no more cross-channel confusion and everyone is much 
-      more focused.”
-    
-      Richard Watts
-      “Manage allows us to provide structure and process. It keeps us organized 
-      and focused. I can’t stop recommending them to everyone I talk to!”
-    
-      Shanai Gough
-      “Their software allows us to track, manage and collaborate on our projects 
-      from anywhere. It keeps the whole team in-sync without being intrusive.”
-    
       Get Started
     
       Simplify how your team works today.
@@ -149,14 +175,35 @@
       </div>
   </pre>
 
-    <!-- Open Mobile Navigation -->
     <script>
+      // Open Mobile Navigation
       document.getElementById("open-nav").onclick = function () {
         this.parentElement.classList.toggle("opened");
         const currentSrc = this.getAttribute("src");
         this.setAttribute("src", this.dataset.altSrc);
         this.dataset.altSrc = currentSrc;
       };
+      // Testmonials Navigation
+      const slider = document.getElementById("testmonials-slider");
+      const bullets = Array.from(document.getElementById("slider-nav").children);
+      let activeCard = 0;
+      bullets.forEach((b, i) => {
+        b.onclick = () => {
+          bullets.forEach((B) => {
+            B.classList.remove("active");
+          });
+          b.classList.add("active");
+          activeCard = i;
+          slide();
+        };
+      });
+      function slide() {
+        const move =
+          parseFloat(getComputedStyle(slider.firstElementChild).getPropertyValue("width")) +
+          parseFloat(getComputedStyle(slider).getPropertyValue("gap"));
+        slider.style.transform = `translateX(${-activeCard * move}px)`;
+      }
+      window.onresize = slide;
     </script>
   </body>
 </html>

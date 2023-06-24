@@ -5,6 +5,7 @@
     - Header
     - Main
     - Features
+    - Testmonials
 */
 /* Break Point: 50rem, 60rem */
 
@@ -40,6 +41,7 @@ body {
   background-size: min(100%, 40rem) auto, min(80%, 20rem) auto;
   background-position: calc(100% + 6rem) -6%, calc(100% + 10rem) 100vmin;
   min-height: 200vh;
+  overflow-x: hidden;
 }
 @media (min-width: 60rem) {
   body {
@@ -75,6 +77,10 @@ h3 {
   color: hsl(228, 39%, 23%);
   white-space: balance;
   font-weight: 700;
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 p {
   color: hsl(227, 12%, 61%);
@@ -243,10 +249,6 @@ main .get-started {
   padding-inline: 1.5rem;
   text-align: center;
 }
-.features .brief h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
 .features .brief p {
   max-width: 30ch;
   margin-inline: auto;
@@ -314,4 +316,78 @@ main .get-started {
   .features ul h3::after {
     display: none;
   }
+}
+
+/*  =============
+    - Testmonials
+    =============  */
+.testmonials h2 {
+  margin-inline: auto;
+  width: fit-content;
+  margin-bottom: 3rem;
+}
+#testmonials-slider {
+  display: flex;
+  padding-inline: 2rem;
+  gap: 2rem;
+  width: calc(400% - 6rem);
+  transition: transform 0.5s;
+}
+@media (min-width: 60rem) {
+  #testmonials-slider {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Container Width */
+    width: min(75rem, 95vw);
+    padding-inline: 1.5rem;
+    margin-inline: auto;
+  }
+}
+@media (min-width: 100rem) {
+  #testmonials-slider {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+#testmonials-slider .card {
+  background-color: hsl(0, 0%, 98%);
+  width: 100%;
+  margin-top: 3rem;
+  padding: 0 1rem 2rem;
+  text-align: center;
+}
+#testmonials-slider .card img {
+  border-radius: 100%;
+  width: 5rem;
+  margin-top: -2.5rem;
+}
+#testmonials-slider .card h3 {
+  margin: 1rem 0;
+}
+#slider-nav {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+@media (min-width: 60rem) {
+  #slider-nav {
+    display: none;
+  }
+}
+#slider-nav li {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+  border: 0.1rem solid hsl(12, 88%, 59%);
+  cursor: pointer;
+}
+#slider-nav li:hover {
+  background-color: hsl(13, 100%, 96%);
+}
+#slider-nav li.active {
+  background-color: hsl(12, 88%, 59%);
+}
+.testmonials .get-started {
+  margin: 3rem auto 0;
 }
