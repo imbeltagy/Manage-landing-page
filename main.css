@@ -44,7 +44,7 @@ body {
 @media (min-width: 60rem) {
   body {
     background-size: 50rem auto, 50rem auto;
-    background-position: max(55vw) -10rem, -20rem 100vh;
+    background-position: max(55vw) -10rem, -20rem calc(100vh + 10rem);
   }
 }
 .container {
@@ -52,7 +52,7 @@ body {
   padding-inline: 1.5rem;
   margin: 0 auto;
 }
-.container:not(.hero .container) {
+section:not(.hero) {
   margin-top: 5rem;
 }
 .get-started {
