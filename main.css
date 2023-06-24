@@ -7,6 +7,7 @@
     - Features
     - Testmonials
     - Hook
+    - Footer
 */
 /* Break Point: 50rem, 60rem */
 
@@ -442,4 +443,112 @@ main .get-started {
 }
 .hook .get-started:hover {
   color: hsl(13, 80%, 90%);
+}
+
+/*  ========
+    - Footer
+    ========  */
+footer {
+  background-color: hsl(233, 12%, 13%);
+  color: hsl(227, 12%, 61%);
+  font-weight: 400;
+  padding: 3rem 0;
+}
+footer .container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  padding-bottom: 5rem; /* For Attribution */
+}
+@media (min-width: 60rem) {
+  footer .container {
+    flex-direction: row;
+    align-items: stretch;
+    padding-bottom: 0;
+  }
+}
+footer a {
+  color: #fff;
+  display: inline-block;
+}
+footer a:hover {
+  color: hsl(12, 88%, 59%);
+}
+footer .icons {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 3rem;
+  width: min(100%, 20rem);
+}
+@media (min-width: 60rem) {
+  footer .icons {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+footer .icons .logo img {
+  display: block;
+  height: 2rem;
+  margin: 0 auto;
+  filter: brightness(1000%);
+}
+footer .icons .social {
+  display: flex;
+  justify-content: space-between;
+}
+footer .icons .social img {
+  height: 2rem;
+  cursor: pointer;
+}
+@media (min-width: 60rem) {
+  footer .icons .social {
+    justify-content: center;
+    gap: 1rem;
+  }
+  footer .icons .social img {
+    height: 1.5rem;
+  }
+}
+footer .links {
+  display: flex;
+  justify-content: space-between;
+  width: min(100%, 20rem);
+  margin-inline: auto;
+  line-height: 2;
+}
+footer input {
+  padding: 1.2em 2em;
+  border-radius: 5em;
+}
+footer .go {
+  font-size: 0.8rem;
+  color: #fff;
+  font-weight: 700;
+  padding: 1em 2.5em;
+  border-radius: 5em;
+  background-color: hsl(12, 88%, 59%);
+  transition: background-color 0.3s;
+}
+footer .go:hover {
+  background-color: hsl(12, 96%, 82%);
+}
+footer .attribution {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+}
+@media (min-width: 60rem) {
+  footer .last-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  footer .attribution {
+    position: static;
+  }
 }
