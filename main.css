@@ -1,9 +1,10 @@
 /*  Navigator:-
     ===========
-    - Global Rules
     - Normalize
+    - Global Rules
     - Header
     - Main
+    - Features
 */
 /* Break Point: 50rem, 60rem */
 
@@ -40,16 +41,19 @@ body {
   background-position: calc(100% + 6rem) -6%, calc(100% + 10rem) 100vmin;
   min-height: 200vh;
 }
-@media (min-width: 50rem) {
+@media (min-width: 60rem) {
   body {
-    background-size: clamp(50rem, 60vw, 60rem) auto;
-    background-position: max(50vw, 110%) -10vw, -45vh 100vh;
+    background-size: 50rem auto, 50rem auto;
+    background-position: max(55vw) -10rem, -20rem 100vh;
   }
 }
 .container {
   width: min(75rem, 95vw);
   padding-inline: 1.5rem;
   margin: 0 auto;
+}
+.container:not(.hero .container) {
+  margin-top: 5rem;
 }
 .get-started {
   font-size: 0.8rem;
@@ -63,6 +67,18 @@ body {
 }
 .get-started:hover {
   background-color: hsl(12, 96%, 82%);
+}
+h1,
+h2,
+h3 {
+  line-height: 1.5;
+  color: hsl(228, 39%, 23%);
+  white-space: balance;
+  font-weight: 700;
+}
+p {
+  color: hsl(227, 12%, 61%);
+  line-height: 1.8;
 }
 
 /*  ========
@@ -181,10 +197,8 @@ main img {
   flex-grow: 0;
 }
 h1 {
-  line-height: 1.2;
   font-size: 2.2rem;
-  color: hsl(228, 39%, 23%);
-  white-space: balance;
+  line-height: 1.2;
 }
 @media (min-width: 60rem) {
   h1 {
@@ -192,9 +206,7 @@ h1 {
   }
 }
 main p {
-  color: hsl(227, 12%, 61%);
   margin-top: 1rem;
-  white-space: balance;
 }
 @media (min-width: 60rem) {
   main p {
@@ -207,5 +219,101 @@ main .get-started {
 @media (min-width: 60rem) {
   main .get-started {
     margin-left: 0;
+  }
+}
+
+/*  ==========
+    - Features
+    ==========  */
+.features {
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+}
+@media (min-width: 60rem) {
+  .features {
+    flex-direction: row;
+    gap: 5rem;
+  }
+  .features > * {
+    width: 100%;
+  }
+}
+.features .brief {
+  padding-inline: 1.5rem;
+  text-align: center;
+}
+@media (min-width: 60rem) {
+  .features .brief {
+    text-align: left;
+  }
+}
+.features .brief h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.features .brief p {
+  max-width: 30ch;
+  margin-inline: auto;
+}
+@media (min-width: 60rem) {
+  .features .brief h2 {
+    white-space: break-spaces;
+  }
+  .features .brief p {
+    margin-left: 0;
+  }
+}
+.features ul {
+  counter-reset: li-order;
+}
+@media (min-width: 60rem) {
+  .features ul {
+    padding-left: calc(2ch + 2.4em + 1em);
+  }
+}
+.features li:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.features ul h3 {
+  position: relative;
+  margin-bottom: 0.5em;
+  background-color: hsl(13, 100%, 96%);
+  border-radius: 100em 0 0 100em;
+  display: flex;
+  align-items: center;
+}
+.features ul h3::before {
+  counter-increment: li-order;
+  content: "0" counter(li-order);
+  color: #fff;
+  background-color: hsl(12, 88%, 59%);
+  padding: 0.5em 1.2em;
+  margin-right: 0.8em;
+  border-radius: 100em;
+}
+.features ul h3::after {
+  content: "";
+  background-color: hsl(13, 100%, 96%);
+  height: 100%;
+  width: calc(1rem + 2.5vw); /* the white space around container and padding */
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+@media (min-width: 60rem) {
+  .features ul li {
+    margin-bottom: 2.5em;
+  }
+  .features ul h3 {
+    background-color: unset;
+    padding: 0.5em 0;
+  }
+  .features ul h3::before {
+    position: absolute;
+    left: calc(-1 * (2ch + 2.4em + 1em));
+  }
+  .features ul h3::after {
+    display: none;
   }
 }
