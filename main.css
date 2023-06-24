@@ -243,11 +243,6 @@ main .get-started {
   padding-inline: 1.5rem;
   text-align: center;
 }
-@media (min-width: 60rem) {
-  .features .brief {
-    text-align: left;
-  }
-}
 .features .brief h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -257,6 +252,9 @@ main .get-started {
   margin-inline: auto;
 }
 @media (min-width: 60rem) {
+  .features .brief {
+    text-align: left;
+  }
   .features .brief h2 {
     white-space: break-spaces;
   }
