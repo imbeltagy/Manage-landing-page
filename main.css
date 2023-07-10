@@ -329,14 +329,17 @@ main .get-started {
   margin-bottom: 3rem;
 }
 #testmonials-slider {
+  position: relative;
+  left: 0;
   display: flex;
   padding-inline: 2rem;
   gap: 2rem;
   width: calc(400% - 6rem);
-  transition: transform 0.5s;
+  transition: left 0.5s;
 }
 @media (min-width: 60rem) {
   #testmonials-slider {
+    position: static;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     /* Container Width */

@@ -215,7 +215,7 @@
         const move =
           parseFloat(getComputedStyle(slider.firstElementChild).getPropertyValue("width")) +
           parseFloat(getComputedStyle(slider).getPropertyValue("gap"));
-        slider.style.transform = `translateX(${-activeCard * move}px)`;
+        slider.style.left = `${-activeCard * move}px`;
       }
       window.onresize = slide;
     </script>
